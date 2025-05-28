@@ -112,20 +112,34 @@ Key steps:
   apptainer exec $HOME/cellprofiler/cp-4.2.5.sif cellprofiler -c -r -p pipeline.cppipe -i images/ -o output/
   ```
 
+  ### Hydra HPC at VUB
+
+Key steps:
+
+* Apptainer module: *Currently under development* - LIVR
+
+* We can run a complete pipeline by making a *conda* environment with these requirements: https://github.com/WayScience/nf1_schwann_cell_painting_data/blob/main/environments/nf1_cellpainting_env.yml
+
+* Suggested partition config in Hydra: 2X *Zen4: AMD EPYC 9384X* (64 cores) + 64GB RAM (minimum) 
+
+
 ---
 
-## Example SLURM Script
+## Example SLURM Script for VUB HPC
 
 ```bash
 #!/bin/bash
 #SBATCH --job-name=cellprofiler
-#SBATCH --partition=standard
+#SBATCH --partition=zen4
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=8
+#SBATCH --cpus-per-task=64
 #SBATCH --mem=64G
-#SBATCH --time=08:00:00
+#SBATCH --time=72:00:00
 #SBATCH --output=logs/%x_%j.log
+
+# This path should be chnaged based on your needs
+cd /scratch/brussel/vo/000/bvo00026/vsc11013/Imaging/cytomining/nf1_schwann_cell_painting_data/2.cellprofiler_analysis  
 
 module purge
 module load Mamba
@@ -166,11 +180,3 @@ If you have questions or suggestions, please use the GitHub issues page or email
 ```
 
 ---
-
-Let me know if you'd like:
-- A `.gitignore` file for Python + HPC
-- A `LICENSE` file (MIT or another)
-- A directory structure template for the repo
-
-This will help get your GitHub project fully production-ready.
-```
