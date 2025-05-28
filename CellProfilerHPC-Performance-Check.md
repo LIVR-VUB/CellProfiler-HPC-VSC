@@ -122,5 +122,3 @@ This gives:
 | `print()` | From within script          | View in log file   |
 
 ---
-
-Would you like a diagnostic Python snippet that logs per-plate CPU start/end times as well? That can help trace bottlenecks.
