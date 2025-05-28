@@ -1,4 +1,3 @@
-````markdown
 # CellProfiler on HPC: A Complete Guide
 
 This repository provides tools, scripts, and documentation for installing, configuring, and running [CellProfiler](https://cellprofiler.org/) in high-performance computing (HPC) environments. It is designed to support large-scale image analysis workflows, including Cell Painting and high-content screening, on SLURM-based clusters.
