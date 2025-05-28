@@ -1,8 +1,8 @@
-Yes, absolutely — **you can monitor core usage in real-time or after the fact** while your SLURM job is running. Here's how to do it, step by step:
+### Monitoring CellProfiler on HPC (*Core Status and Parallel Processing*)
 
 ---
 
-## ✅ 1. **While the Job is Running: Use `sstat` or `htop`**
+## 1. **While the Job is Running: Use `sstat` or `htop`**
 
 ### Option A: Monitor Live Job Stats with `sstat`
 
@@ -53,7 +53,7 @@ Then press:
 
 ---
 
-## ✅ 2. **Inside Your Python Script: Print or Log CPU Info**
+## 2. **Inside Your Python Script: Print or Log CPU Info**
 
 Add this at the top of `nf1_analysis.py`:
 
@@ -75,7 +75,7 @@ print(f"Launching ProcessPoolExecutor with {num_processes} workers at {datetime.
 
 ---
 
-## ✅ 3. **Log CPU Allocation to Your SLURM Output**
+## 3. **Log CPU Allocation to Your SLURM Output**
 
 Everything printed with `print()` in Python will go into your SLURM log file:
 
@@ -91,7 +91,7 @@ less logs/plate3_<jobid>.out
 
 ---
 
-## ✅ 4. **After the Job Finishes: Use `sacct`**
+## 4. **After the Job Finishes: Use `sacct`**
 
 ```bash
 sacct -j <jobid> --format=JobID,JobName%20,Elapsed,TotalCPU,MaxRSS,AveRSS
