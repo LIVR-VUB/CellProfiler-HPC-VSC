@@ -121,7 +121,7 @@ Key steps:
 * We can run a complete pipeline by making a *conda* environment with these requirements: https://github.com/WayScience/nf1_schwann_cell_painting_data/blob/main/environments/nf1_cellpainting_env.yml
 
 * Suggested partition config in Hydra: 2X *Zen4: AMD EPYC 9384X* (64 cores) + 64GB RAM (minimum)
-* ### Important: ### Look
+* ### Important: More here on monitoring *CellProfiler* performance on **Hydra** - (https://github.com/arka2696/CellProfiler-HPC/blob/main/CellProfilerHPC-Performance-Check.md)
 
 
 ---
