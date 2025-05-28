@@ -112,7 +112,7 @@ Key steps:
   apptainer exec $HOME/cellprofiler/cp-4.2.5.sif cellprofiler -c -r -p pipeline.cppipe -i images/ -o output/
   ```
 
-  ### Hydra HPC at VUB
+### Hydra HPC at VUB
 
 Key steps:
 
