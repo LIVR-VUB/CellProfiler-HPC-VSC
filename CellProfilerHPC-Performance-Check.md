@@ -122,3 +122,27 @@ This gives:
 | `print()` | From within script          | View in log file   |
 
 ---
+
+## Command for checking SLURM job output: 
+
+To **watch the real-time output** of a Slurm job `.out` file (like `plate3_10792107.out`), you can use the `tail` command with the `-f` (follow) flag:
+
+```bash
+tail -f plate3_10792107.out
+```
+
+### Explanation:
+
+* `tail -f` continuously displays new lines as they are added to the file.
+* Press `Ctrl+C` to stop watching the file.
+
+### Optional enhancements:
+
+If you want to see the **last 50 lines first**, and then follow new output:
+
+```bash
+tail -n 50 -f plate3_10792107.out
+```
+
+Let me know if you want to monitor multiple `.out` files or filter the output.
+
