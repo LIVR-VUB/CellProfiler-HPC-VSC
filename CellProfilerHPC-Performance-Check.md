@@ -144,5 +144,4 @@ If you want to see the **last 50 lines first**, and then follow new output:
 tail -n 50 -f plate3_10792107.out
 ```
 
-Let me know if you want to monitor multiple `.out` files or filter the output.
 
