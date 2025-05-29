@@ -1,4 +1,4 @@
-### Monitoring CellProfiler on HPC (*Core Status and Parallel Processing*)
+### Monitoring CellProfiler on Hydra-HPC (*Core Status and Parallel Processing*)
 
 ---
 
