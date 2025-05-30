@@ -152,7 +152,39 @@ conda activate nf1_cellpainting_data
 
 python scripts/nf1_analysis.py
 ```
-**Alternate SLURM script ideas (Not tested on Hydra:**
+
+## Another Example:
+```bash
+#!/bin/bash
+#SBATCH --job-name=plate3
+#SBATCH --partition=zen4
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=16G
+#SBATCH --time=4:00:00
+#SBATCH --output=logs/%x_%j.out
+
+
+module purge
+module load Mamba
+source $EBROOTMAMBA/etc/profile.d/conda.sh
+conda activate cytomining_a
+
+cd /scratch/brussel/vo/000/bvo00026/vsc11013/Data/cytomining_test/Profiling_project/1.cellprofiler_ic/image_quality_control
+
+mkdir -p scripts
+
+jupyter nbconvert --to python --output-dir=scripts/ *.ipynb
+
+python scripts/0.whole_image_qc.py 
+
+conda deactivate
+
+export MAX_WORKERS=$SLURM_CPUS_PER_TASK
+```
+
+**Alternate SLURM script ideas (Not tested on Hydra):**
 
 ```bash
 #!/bin/bash
