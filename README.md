@@ -17,14 +17,13 @@ This repository provides tools, scripts, and documentation for installing, confi
 
 These instructions guide you through installing CellProfiler and its dependencies on Ubuntu 22.04.
 
-### Step 1: Update the system
-
+### Step 1: Update the system (Not possible on HPC - sudo is not allowed on VSC-Hydra)
 ```bash
 sudo apt update
 sudo apt -y upgrade
 ````
 
-### Step 2: Install required dependencies
+### Step 2: Install required dependencies ((Not possible on HPC - sudo is not allowed on VSC-Hydra)
 
 ```bash
 sudo apt install -y build-essential python3-dev default-libmysqlclient-dev openjdk-11-jdk-headless libgtk-3-dev libnotify-dev libsdl2-dev
